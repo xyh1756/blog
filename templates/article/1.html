@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/css/css/page-style.css" type="text/css" rel="stylesheet">
+    <link href="/static/css/css/syntax.css" type="text/css" rel="stylesheet">
+    <title>服务器上Django+MySQL+Apache环境的搭建过程</title>
+</head>
+<body style="text-align: center">
+<div class="tut-post-main">
+<div class="section ie-size">
+<div class="tut-main-content-pad">
+<h1>服务器上Django+MySQL+Apache环境的搭建过程</h1>
+<div style="text-align: center;">
+          作者:
+          <span class="author">
+
+            xyh
+
+          </span>
+          <span class="publish-date">
+
+            2018-09-19
+
+          </span>
+          阅读量:
+          <span class="author">
+              {{ read_count.count }}
+          </span>
+
+        </div>
+    <p>&nbsp&nbsp跟随着学习Django的进程，我在服务器上搭建好了以上环境。服务器配置：</p>
+    <p>
+    <img class="course-image lazy-img" src="/static/css/img/1/hardware.jpg" alt="服务器配置" title="服务器配置">
+    </p>
+    <p>在把本地Django项目迁移到服务器时，执行</p>
+    <div class="language-python highlighter-rouge">
+        <div class="highlight">
+            <pre class="highlight"><code><span class="s">python3&nbsp</span><span class="k">manage.py </span><span class="s">makemigrations</span></code></pre>
+        </div>
+    </div>
+    <p>操作时，总是检测不到改变，数据库模型无法迁移。后来了解到，数据库里面的表迁移需要提前把项目里的__pycache__文件夹除了admin.cpython-36.pyc删除掉，然后把每个app文件夹里面的migrations文件夹里面的__pycache__文件夹除了admin.cpython-36.pyc也删除掉😅。<br /></p>
+    <p>
+    <img class="course-image lazy-img" src="/static/css/img/1/__pycache__.jpg" alt="删除__pycache__文件夹部分内容" title="删除__pycache__文件夹部分内容">
+    </p>
+    <p>&nbsp&nbspApache配置需要按照官方的教程来。国内很多教程说的是把sites-available文件夹里新建一个项目的conf配置文件，但我试了总不行。后来在官网查到最新版本的Apache是直接在apache2.conf配置文件中添加项目的，中文教程属实坑了我一把。<br /></p>
+    <p>
+    <img class="course-image lazy-img" src="/static/css/img/1/apache_conf.jpg" alt="Apache配置" title="Apache配置">
+    </p>
+    <p>&nbsp&nbsp后来，环境搭好了，陆陆续续随便写了一点东西，找了以下模板，就把网页挂上来了。配置环境前后花了我三四天的时间，感受是：配置环境一类的东西，还是以官网为准吧，能看英文还是看英文的。。
+    </p>
+    <div class="pad-page-navigation">
+    <div class="PageNavigation">
+    <a class="prev" href="/">
+    <strong>«</strong> <i>返回主页</i></a>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
