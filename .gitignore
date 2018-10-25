@@ -23,6 +23,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+.gitattributes
 MANIFEST
 
 # PyInstaller
@@ -102,3 +103,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
